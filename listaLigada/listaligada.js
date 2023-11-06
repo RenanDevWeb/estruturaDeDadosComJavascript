@@ -1,5 +1,5 @@
 function likedList(){
-    var node = function(element){
+    var Node = function(element){
         this.element = element
         this.next = null
     }
@@ -9,8 +9,18 @@ function likedList(){
     this.append  = function(element){ 
           // adiciona um elemento ao final da lista
          
-          var node = new Nodeo
+          var node = new Node(element),current
+          if(head === null){
+            head = node
+          }else{
+            current = head
+         while (current.next ) {
+             current = current.next
+         }
 
+         current.next = node 
+        }
+        length++
 
      }
       
@@ -58,3 +68,11 @@ function likedList(){
         }
 
     }
+
+
+    var lista = new likedList()
+    lista.append("joao ")
+    lista.append("maria ")
+    lista.append("carlos ")
+    lista.append("junior ")
+    lista.print()
