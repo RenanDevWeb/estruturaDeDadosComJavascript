@@ -1,78 +1,86 @@
-function likedList(){
-    var Node = function(element){
-        this.element = element
-        this.next = null
-    }
-    var length = 0 
-    var head = null
+function linkedList() {
+   var Node = function(element){
+    this.element = element
+    this.next = null
+   }
 
-    this.append  = function(element){ 
-          // adiciona um elemento ao final da lista
-         
-          var node = new Node(element),current
-          if(head === null){
-            head = node
-          }else{
-            current = head
-         while (current.next ) {
-             current = current.next
-         }
-
-         current.next = node 
-        }
-        length++
-
-     }
-      
-        this.insert = function(position, element){
-            // adiciona o elemento em uma posicão especifica na fila 
-        }
+  var length = 0
+  var head = null
 
 
+  
+this.append = function(element){
+   // adicionar elemento ao final da lista
+    
+    var node = new Node(element)
+    var current 
 
-        this.removeAt = function(position){
-            // remove um elemento em uma posicão especifica 
+    if(head === null ){
+      head = node
+    }else{
+      current = head
 
-        }
-        this.remove = function(element){
-            // remove o elemento element ou seja o elemento sendo passado como paramentro da função 
-        }
+      while (current.next != null) {
+         current = current.next
+      }
 
-        this.indexOF = function(element){
-            // retorna a posição do elemento 
-        }
-
-
-        this.isEmpty = function(){
-            // retorna se a instancia esta vazia
-        }
-
-        this.size = function(){
-            // retorna o tamanho da instancia 
-        }
-        this.toString =  function(){
-            // imprime a lista 
-
-            var current = head , string = ''
-
-            while (current) {
-                string += current.element + ' '
-                current = current.next 
-            }
-            return string 
-
-        }
-
-        this.print = function(){
-            console.log(this.toString())
-        }
-
+      current.next = node
     }
 
+    length++
 
-    var lista = new likedList()
-    lista.append("joao ")
-    lista.append("maria ")
-    lista.append("carlos ")
-    lista.append("junior ")
-    lista.print()
+}
+
+
+this.insert = function(position,element){
+   // adiciona um elemento em uma posição especifica 
+}
+
+
+this.removeAt = function(position){
+   // remove um item em uma posição especifica  
+}
+this.remove = function(element){
+   // remove um elemento
+}
+
+this.indexOf = function(element){
+   // retorna a posiçao do elemento
+}
+this.isEmpty = function(element){
+   // retorna se a lista esta vazia ou nao 
+}
+
+ this.size = function(){
+   // retorna o tamanho da instancia
+  
+ }
+
+ this.toString = function(){
+   // converte em string
+   var current = head
+   string = ''
+   while (current) {
+      string +=  current.element +"\n"
+      current = current.next
+   }
+   return string
+ }
+
+
+
+ this.print = function(){
+   // retorna o tamanho da instancia
+   console.log(`${this.toString()}`)
+ }
+ 
+}
+
+    
+
+
+var linkedList = new linkedList()
+linkedList.append('João')
+linkedList.append('Jose')
+linkedList.append('Maria')
+linkedList.print()
